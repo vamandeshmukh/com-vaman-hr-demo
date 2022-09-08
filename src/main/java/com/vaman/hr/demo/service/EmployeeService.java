@@ -3,6 +3,8 @@ package com.vaman.hr.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Stream;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -19,6 +21,23 @@ public class EmployeeService {
 			logger.warn("No employees exist.");
 		return empList;
 	}
+
+//	public void karthikDeleteEmp(int employeeId) {
+//
+//		Employee emp1 = null;
+//		Stream<Employee> myEmp = empList.stream();
+//		int i;
+//		empList.stream().flatMap(emp -> {
+//			if (emp.getEmployeeId() == employeeId) {
+//				i = empList.indexOf(emp);
+//			}
+//		});
+//
+//		emp1 = empList.get(i);
+//		String name = emp1.getFirstName();
+//		empList.remove(emp1);
+//		return name + "'s Employee file removed from the Database";
+//	}
 
 	public Employee viewEmployeeById(int employeeId) {
 		Optional<Employee> empOptional = empList.stream().filter(e -> e.getEmployeeId() == employeeId).findAny();
