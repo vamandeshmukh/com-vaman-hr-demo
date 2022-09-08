@@ -13,6 +13,17 @@ public class EmployeeService {
 	private final Logger logger = LogManager.getLogger(this.getClass());
 	private List<Employee> empList = new ArrayList<>();
 
+	public List<Employee> viewAllEmployees() {
+		if (empList.isEmpty())
+			logger.warn("No employees exist.");
+		return empList;
+	}
+
+	public Employee viewEmployeeById(int employeeId) {
+		// your code
+		return null;
+	}
+
 	public Employee addEmployee(Employee employee) {
 		logger.info(employee.getEmployeeId());
 		if (empList.contains(employee)) {
@@ -24,10 +35,13 @@ public class EmployeeService {
 		}
 	}
 
-	public List<Employee> viewAllEmployees() {
-		if (empList.isEmpty())
-			logger.warn("No employees exist.");
-		return empList;
+	public Employee updateEmployee(Employee employee) {
+		// your code
+		return null;
+	}
 
+	public Employee deleteEmployeeById(int employeeId) {
+		// your code
+		return null;
 	}
 }
