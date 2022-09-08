@@ -87,7 +87,7 @@ public class Hrm {
 	}
 
 	private static void exitApp() {
-		System.out.println("Thanks for using our app...");
+		System.out.println("Thanks for using this app!");
 		System.exit(0);
 	}
 }
