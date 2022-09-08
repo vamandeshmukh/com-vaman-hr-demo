@@ -54,10 +54,7 @@ public class EmployeeService {
 	}
 
 	public Employee updateEmployee(Employee employee) {
-
-		this.viewEmployeeById(employee.getEmployeeId());
-		// code 
-		empList.set(0, employee);
+		empList.set(empList.indexOf(this.viewEmployeeById(employee.getEmployeeId())), employee);
 		return employee;
 	}
 
