@@ -46,7 +46,7 @@ public class Hrm {
 				double salary = sc.nextDouble();
 				Employee employee = new Employee(employeeId, firstName, salary);
 				service.addEmployee(employee);
-				System.out.println("Employee Details:\n" + employee.toString());
+				System.out.println("\nEmployee Details:\n" + employee.toString());
 				Hrm.selectOption();
 				break;
 			case 4:
@@ -59,7 +59,7 @@ public class Hrm {
 				salary = sc.nextDouble();
 				employee = new Employee(employeeId, firstName, salary);
 				service.updateEmployee(employee);
-				System.out.println("Employee Details:\n" + employee.toString());
+				System.out.println("\nEmployee Details:\n" + employee.toString());
 				Hrm.selectOption();
 				break;
 			case 5:

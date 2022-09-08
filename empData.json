@@ -13,10 +13,5 @@
     "employeeId": 103,
     "firstName": "Tonu",
     "salary": 85000.0
-  },
-  {
-    "employeeId": 104,
-    "firstName": "Gonu",
-    "salary": -9000.0
   }
 ]
