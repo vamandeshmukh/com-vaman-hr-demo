@@ -22,22 +22,19 @@ public class EmployeeService {
 		return empList;
 	}
 
-//	public void karthikDeleteEmp(int employeeId) {
-//
-//		Employee emp1 = null;
-//		Stream<Employee> myEmp = empList.stream();
-//		int i;
-//		empList.stream().flatMap(emp -> {
-//			if (emp.getEmployeeId() == employeeId) {
-//				i = empList.indexOf(emp);
-//			}
-//		});
-//
-//		emp1 = empList.get(i);
-//		String name = emp1.getFirstName();
-//		empList.remove(emp1);
-//		return name + "'s Employee file removed from the Database";
-//	}
+	public void karthikDeleteEmp(int employeeId) {
+
+		Employee emp1 = null;
+		Stream<Employee> myEmp = empList.stream();
+		int i;
+		
+		empList.stream().filter(emp -> 
+			 emp.getEmployeeId() == employeeId );
+
+//	emp1=empList.get(i);
+
+//	String name = emp1.getFirstName();empList.remove(emp1);return name+"'s Employee file removed from the Database";
+	}}
 
 	public Employee viewEmployeeById(int employeeId) {
 		Optional<Employee> empOptional = empList.stream().filter(e -> e.getEmployeeId() == employeeId).findAny();
