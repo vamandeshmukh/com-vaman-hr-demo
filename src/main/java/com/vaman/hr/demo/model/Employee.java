@@ -1,5 +1,7 @@
 package com.vaman.hr.demo.model;
 
+// entity class / model class / POJO class 
+
 public class Employee {
 
 	private int employeeId;
