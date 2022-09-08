@@ -17,7 +17,7 @@ public class App {
 
 	public static void main(String[] args) {
 		logger.info("Start");
-		System.out.println("Welcome to HR management application:");
+		System.out.println("Welcome to HR management application:\n");
 		Hrm.selectOption();
 		logger.info("End");
 	}
