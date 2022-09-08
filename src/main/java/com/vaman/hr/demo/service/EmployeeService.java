@@ -25,12 +25,12 @@ public class EmployeeService {
 	}
 
 	public Employee addEmployee(Employee employee) {
-		logger.info(employee.getEmployeeId());
 		if (empList.contains(employee)) {
 			logger.error("Employee with eid " + employee.getEmployeeId() + " already exists.");
 			return null;
 		} else {
 			empList.add(employee);
+			System.out.println("Employee added successfully.");
 			return null;
 		}
 	}
