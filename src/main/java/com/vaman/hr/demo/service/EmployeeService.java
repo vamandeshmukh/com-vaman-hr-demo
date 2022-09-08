@@ -21,11 +21,10 @@ public class EmployeeService {
 	}
 
 	public Employee viewEmployeeById(int employeeId) {
-		Optional<Employee> emp = empList.stream().filter(e -> e.getEmployeeId() == employeeId).findAny();
-		if (emp.isPresent())
-			return emp.get();
+		Optional<Employee> empOptional = empList.stream().filter(e -> e.getEmployeeId() == employeeId).findAny();
+		if (empOptional.isPresent())
+			return empOptional.get();
 		throw new EmployeeNotFoundException("Employee with eid " + employeeId + " does not exist.");
-
 	}
 
 	public Employee addEmployee(Employee employee) {
