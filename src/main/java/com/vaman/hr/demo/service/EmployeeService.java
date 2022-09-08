@@ -3,8 +3,6 @@ package com.vaman.hr.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -56,12 +54,16 @@ public class EmployeeService {
 	}
 
 	public Employee updateEmployee(Employee employee) {
-		// your code
-		return null;
+
+		this.viewEmployeeById(employee.getEmployeeId());
+		// code 
+		empList.set(0, employee);
+		return employee;
 	}
 
 	public Employee deleteEmployeeById(int employeeId) {
-		// your code
-		return null;
+		Employee emp = this.viewEmployeeById(employeeId);
+		empList.remove(emp);
+		return emp;
 	}
 }

@@ -31,9 +31,9 @@ public class Hrm {
 				break;
 			case 2:
 				System.out.println("Please enter employeeId to search:");
-				int eid = sc.nextInt();
+				int employeeid = sc.nextInt();
 				System.out.println("Employee Details:");
-				System.out.println(service.viewEmployeeById(eid).toString());
+				System.out.println(service.viewEmployeeById(employeeid).toString());
 				Hrm.selectOption();
 				break;
 			case 3:
@@ -50,11 +50,23 @@ public class Hrm {
 				Hrm.selectOption();
 				break;
 			case 4:
-				System.out.println("Please:");
+				System.out.println("Please enter employee details to update:");
+				System.out.println("employeeId:");
+				employeeId = sc.nextInt();
+				System.out.println("firstName:");
+				firstName = sc.next();
+				System.out.println("salary:");
+				salary = sc.nextDouble();
+				employee = new Employee(employeeId, firstName, salary);
+				service.updateEmployee(employee);
+				System.out.println("Employee Details:\n" + employee.toString());
 				Hrm.selectOption();
 				break;
 			case 5:
-				System.out.println("Please:");
+				System.out.println("Please enter employeeId to delete:");
+				employeeid = sc.nextInt();
+				System.out.println("Employee Details:");
+				System.out.println(service.deleteEmployeeById(employeeid).toString());
 				Hrm.selectOption();
 				break;
 			case 6:
