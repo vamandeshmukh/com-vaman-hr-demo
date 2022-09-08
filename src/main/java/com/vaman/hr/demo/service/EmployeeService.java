@@ -3,6 +3,7 @@ package com.vaman.hr.demo.service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.apache.logging.log4j.LogManager;
@@ -22,21 +23,21 @@ public class EmployeeService {
 		return empList;
 	}
 
-	public void karthikDeleteEmp(int employeeId) {
+//	public void karthikDeleteEmp(int employeeId) {
+//
+//		Employee emp1 = null;
+//		Stream<Employee> myEmp = empList.stream();
+//		int i;
+//
+//		List<Employee> filteredList = empList.stream().filter(emp -> emp.getEmployeeId() == employeeId)
+//				.collect(Collectors.toList());
+//
+////	emp1=empList.get(i);
+//
+////	String name = emp1.getFirstName();empList.remove(emp1);return name+"'s Employee file removed from the Database";
+//	}
 
-		Employee emp1 = null;
-		Stream<Employee> myEmp = empList.stream();
-		int i;
-		
-		empList.stream().filter(emp -> 
-			 emp.getEmployeeId() == employeeId );
-
-//	emp1=empList.get(i);
-
-//	String name = emp1.getFirstName();empList.remove(emp1);return name+"'s Employee file removed from the Database";
-	}}
-
-	public Employee viewEmployeeById(int employeeId) {
+	public Employee viewEmployeeById(int employeeId) { // 101
 		Optional<Employee> empOptional = empList.stream().filter(e -> e.getEmployeeId() == employeeId).findAny();
 		if (empOptional.isPresent())
 			return empOptional.get();
