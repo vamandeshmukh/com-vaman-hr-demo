@@ -55,11 +55,13 @@ public class EmployeeService {
 
 	public Employee updateEmployee(Employee employee) {
 		empList.set(empList.indexOf(this.viewEmployeeById(employee.getEmployeeId())), employee);
+		System.out.println("Employee updated successfully.");
 		return employee;
 	}
 
 	public Employee deleteEmployeeById(int employeeId) {
 		Employee emp = this.viewEmployeeById(employeeId);
+		System.out.println("Employee deleted successfully.");
 		empList.remove(emp);
 		return emp;
 	}
