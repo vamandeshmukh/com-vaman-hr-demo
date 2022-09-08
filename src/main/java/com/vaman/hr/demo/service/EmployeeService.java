@@ -46,15 +46,14 @@ public class EmployeeService {
 	}
 
 	public Employee updateEmployee(Employee employee) {
-		empList = dao.readDataFromFile();
-		empList.set(empList.indexOf(this.viewEmployeeById(employee.getEmployeeId())), employee);
+		Employee oldEmp = this.viewEmployeeById(employee.getEmployeeId());
+		empList.set(empList.indexOf(oldEmp), employee);
 		System.out.println("Employee updated successfully.");
 		dao.writeDataToFile(empList);
 		return employee;
 	}
 
 	public Employee deleteEmployeeById(int employeeId) {
-		empList = dao.readDataFromFile();
 		Employee emp = this.viewEmployeeById(employeeId);
 		System.out.println("Employee deleted successfully.");
 		empList.remove(emp);
