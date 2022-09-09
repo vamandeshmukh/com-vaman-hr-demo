@@ -1,13 +1,17 @@
 package com.vaman.hr.demo;
 
 import java.io.IOException;
-import java.io.InputStream;
+import java.lang.reflect.Type;
+import java.util.List;
 
 import org.apache.hc.client5.http.classic.methods.HttpGet;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpClient;
 import org.apache.hc.client5.http.impl.classic.CloseableHttpResponse;
 import org.apache.hc.client5.http.impl.classic.HttpClients;
-import org.apache.hc.core5.http.HttpEntity;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import com.vaman.hr.demo.model.Post;
 
 public class ApacheHttpDemo {
 
@@ -23,17 +27,16 @@ public class ApacheHttpDemo {
 		int statusCode = response.getCode();
 		System.out.println(statusCode);
 
-		HttpEntity entity = response.getEntity();
-		InputStream input = entity.getContent();
-		byte[] allBytes = input.readAllBytes();
+		String postsJsonData = new String(response.getEntity().getContent().readAllBytes());
 
-		System.out.println("Start");
-		for (byte b : allBytes)
-			System.out.print((char) b);
-		System.out.println("End");
+		Gson gson = new Gson();
+		Type listType = new TypeToken<List<Post>>() {
+		}.getType();
+
+		List<Post> postList = gson.fromJson(postsJsonData, listType);
+
+		postList.forEach(p -> System.out.println(p.toString()));
 
 		httpClient.close();
-
 	}
-
 }
