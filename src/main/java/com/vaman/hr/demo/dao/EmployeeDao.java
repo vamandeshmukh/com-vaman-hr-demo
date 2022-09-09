@@ -16,7 +16,10 @@ import java.lang.reflect.Type;
 import com.google.gson.reflect.TypeToken;
 
 public class EmployeeDao {
+	
+//	jdbc code to perform CRUD op on DB 
 
+//	private Gson gson = new Gson();
 	private Gson gson = new GsonBuilder().setPrettyPrinting().create();
 	private List<Employee> empList = new ArrayList<>();
 	private File file = new File("empData.json");
@@ -40,6 +43,7 @@ public class EmployeeDao {
 			Type listType = new TypeToken<ArrayList<Employee>>() {
 			}.getType();
 			empList = gson.fromJson(reader, listType);
+//			empList = gson.fromJson(reader, List<Employee>.class);
 			reader.close();
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -63,3 +67,5 @@ public class EmployeeDao {
 		this.readDataFromFile();
 	}
 }
+
+
